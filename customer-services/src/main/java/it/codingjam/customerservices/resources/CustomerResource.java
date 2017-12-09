@@ -1,13 +1,11 @@
 package it.codingjam.customerservices.resources;
 
+import it.codingjam.customerservices.dtos.Customer;
 import it.codingjam.customerservices.dtos.Customers;
 import it.codingjam.customerservices.services.CustomerService;
 
 import javax.inject.Inject;
-import javax.ws.rs.Consumes;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 
 @Path("/v1/customers")
@@ -21,5 +19,14 @@ public class CustomerResource {
     @GET
     public Customers getAll() {
         return customerService.getAll();
+    }
+
+    @GET
+    @Path("/{id}")
+    public Customer getById(@PathParam("id") Long id) {
+        return customerService.getAll().getCustomers().stream()
+                .filter(c -> id.equals(c.getId()))
+                .findAny()
+                .orElseThrow(NotFoundException::new);
     }
 }
