@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="true">
+    <include resource="org/springframework/boot/logging/logback/base.xml" />
+    <include resource="logstash-appender.xml" />
+
+    <root level="INFO">
+        <appender-ref ref="CONSOLE" />
+        <appender-ref ref="FILE" />
+        <appender-ref ref="STASH" />
+    </root>
+
+    <logger name="org.springframework.web" level="INFO"/>
+
+    <jmxConfigurator/>
+</configuration>

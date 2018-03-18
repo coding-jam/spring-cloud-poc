@@ -22,6 +22,7 @@ public class CustomerResource {
 
     @GET
     public Customers getAll() {
+        LOGGER.log(Level.INFO, "Searching all customers");
         return customerService.getAll();
     }
 
