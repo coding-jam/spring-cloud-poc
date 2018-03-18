@@ -1,6 +1,7 @@
 package it.codingjam.customerservices;
 
 import it.codingjam.customerservices.resources.CustomerResource;
+import it.codingjam.filters.enablers.EnableLoggingInfo;
 import org.glassfish.jersey.logging.LoggingFeature;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.springframework.boot.SpringApplication;

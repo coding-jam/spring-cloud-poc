@@ -18,5 +18,6 @@
 		<module>customer-services</module>
 		<module>order-services</module>
 		<module>zipkin-server</module>
-	</modules>
+        <module>commons</module>
+    </modules>
 </project>
