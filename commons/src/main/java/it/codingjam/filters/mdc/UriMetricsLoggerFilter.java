@@ -17,11 +17,12 @@ public class UriMetricsLoggerFilter implements Filter {
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
         long startTime = System.currentTimeMillis();
-        chain.doFilter(request, response);
-
         HttpServletRequest servletRequest = (HttpServletRequest) request;
         HttpServletResponse servletResponse = (HttpServletResponse) response;
         MDC.put("uri", servletRequest.getRequestURI());
+
+        chain.doFilter(request, response);
+
         MDC.put("status", String.valueOf(servletResponse.getStatus()));
         MDC.put("elapsedInMs", String.valueOf(System.currentTimeMillis() - startTime));
     }
