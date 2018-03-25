@@ -26,4 +26,10 @@ public class OrderResource {
         Orders customerOrders = orderService.getCustomerOrders(customerId);
         return Response.ok(customerOrders).build();
     }
+
+    @GET
+    @Path("/exception")
+    public Response generateException(@PathParam("id") Long customerId) {
+        throw new IllegalArgumentException("Example stacktrace for ELK");
+    }
 }
