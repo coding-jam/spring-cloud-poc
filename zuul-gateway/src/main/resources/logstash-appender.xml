@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+File appender logback configuration provided for import, equivalent to the programmatic
+initialization performed by Boot
+-->
+
+<included>
+	<appender name="STASH" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
+		<destination>localhost:5000</destination>
+		<encoder class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
+			<providers>
+				<mdc />
+				<context />
+				<logLevel />
+				<loggerName />
+				<pattern>
+					<pattern>
+						{
+						"serviceName": "zuul-gateway"
+						}
+					</pattern>
+				</pattern>
+				<threadName />
+				<message />
+				<logstashMarkers />
+				<stackTrace />
+			</providers>
+		</encoder>
+	</appender>
+</included>
