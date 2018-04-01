@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration debug="true">
+    <property name="SERVICE_NAME" value="order-services"/>
     <include resource="org/springframework/boot/logging/logback/base.xml" />
     <include resource="logstash-appender.xml" />
 

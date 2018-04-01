@@ -17,7 +17,7 @@ initialization performed by Boot
 				<pattern>
 					<pattern>
 						{
-						"serviceName": "order-services"
+						"serviceName": "${SERVICE_NAME}"
 						}
 					</pattern>
 				</pattern>
