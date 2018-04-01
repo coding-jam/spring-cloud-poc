@@ -1,5 +1,6 @@
 package it.codingjam.orderservices;
 
+import it.codingjam.filters.enablers.EnableLoggingInfo;
 import it.codingjam.orderservices.resources.OrderResource;
 import org.glassfish.jersey.logging.LoggingFeature;
 import org.glassfish.jersey.server.ResourceConfig;
@@ -12,6 +13,7 @@ import org.springframework.context.annotation.Bean;
 @ServletComponentScan
 @EnableFeignClients
 @SpringBootApplication
+@EnableLoggingInfo
 public class OrderServicesApplication {
 
     public static void main(String[] args) {
