@@ -1,5 +1,6 @@
 package it.codingjam.zuulgateway;
 
+import it.codingjam.filters.enablers.EnableLoggingInfo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
@@ -12,6 +13,7 @@ import org.springframework.context.annotation.Bean;
 @EnableZuulProxy
 @EnableEurekaClient
 @SpringBootApplication
+@EnableLoggingInfo
 public class ZuulGatewayApplication {
 
 	public static void main(String[] args) {

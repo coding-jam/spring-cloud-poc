@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="true">
+    <property name="SERVICE_NAME" value="customer-services" />
+    <property name="JSON_LOG_FILE" value="${JSON_LOG_FILE:-${LOG_PATH:-${LOG_TEMP:-${java.io.tmpdir:-/tmp}}}/${SERVICE_NAME}.json}"/>
+    <include resource="org/springframework/boot/logging/logback/base.xml" />
+    <include resource="json-file-appender.xml" />
+
+    <root level="INFO">
+        <appender-ref ref="CONSOLE" />
+        <appender-ref ref="FILE" />
+        <appender-ref ref="ASYNC_JSON_FILE" />
+    </root>
+
+    <logger name="org.springframework.web" level="INFO"/>
+
+    <jmxConfigurator/>
+</configuration>
