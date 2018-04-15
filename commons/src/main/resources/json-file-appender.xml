@@ -10,7 +10,7 @@ initialization performed by Boot
 		<encoder class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
 			<providers>
 				<timestamp>
-					<fieldName>@original_timestamp</fieldName>
+					<fieldName>timestamp</fieldName>
 					<pattern>yyyy-MM-dd'T'HH:mm:ss.SSS'Z'</pattern>
 					<timeZone>UTC</timeZone>
 				</timestamp>
