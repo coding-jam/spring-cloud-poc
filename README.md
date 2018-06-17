@@ -22,3 +22,11 @@ Ogni modulo Maven è un microservizio. Possiamo dividerli in due macrogruppi:
 Data la natura dei servizi, quelli di "infrastruttura" dovrebbero essere avviati prima di quelli applicativi. 
 In particolare, è vero esclusivamente per il **config-server** perché i servizi applicativi sono configurati per *fallire subito* se non lo trovano.
 
+## Braches
+
+Per sperimentare ELK con Spring Cloud, il progetto ha 4 branch:
+
+* `elk-logstash-with-grok-via-fs`: Logstash legge i file delle applicazioni direttamente da file system e li invia a ElasticSearch
+* `elk-logstash-with-grok-via-filebeat`: FileBeat legge i file delle applicazioni e li invia a Logstash con il suo protocollo.
+* `elk-via-filebeat`: l'applicazione scrive i log in JSON e FileBeat li legge e li invia a Logstash (che non fa altro che tipizzare alcuni campi)
+* `elk-via-logstash-appender`: appender Log4j che scrive direttamente su Logstash
