@@ -22,7 +22,7 @@ Ogni modulo Maven è un microservizio. Possiamo dividerli in due macrogruppi:
 Data la natura dei servizi, quelli di "infrastruttura" dovrebbero essere avviati prima di quelli applicativi. 
 In particolare, è vero esclusivamente per il **config-server** perché i servizi applicativi sono configurati per *fallire subito* se non lo trovano.
 
-## Braches
+## Branches
 
 Per sperimentare ELK con Spring Cloud, il progetto ha 4 branch:
 
